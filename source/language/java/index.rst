@@ -1,18 +1,14 @@
-Java
+Java相关漏洞
 ========================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    basic
    framework
    container
    sandbox
    unserialize
-   rmi
-   jndi
-   jdk
-   sink
-   webshell
    ref
+   

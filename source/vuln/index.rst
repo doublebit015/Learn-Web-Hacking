@@ -1,24 +1,20 @@
-常见漏洞攻防
+常见漏洞
 ================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    sql/index
    xss/index
+   file/index
+   xxe
    csrf
    ssrf
-   cmdinjection
-   pathtraversal
-   fileread
-   fileupload
-   fileinclude
-   xxe
-   ssti
+   tpl
    xpath
+   cmdinjection
    logic
    config
-   middleware/index
+   middleware
    webcache
-   httpSmuggling

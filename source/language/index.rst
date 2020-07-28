@@ -1,16 +1,12 @@
-语言与框架
+语言及其框架相关漏洞
 ================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    php/index
    python/index
    java/index
    javascript/index
-   golang
    ruby
-   asp
-   powershell
-   shell

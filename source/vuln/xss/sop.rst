@@ -30,7 +30,7 @@ Flash/SilverLight跨域
 ----------------------------------------
 同源策略认为域和子域属于不同的域，例如 ``child1.a.com`` 与 ``a.com`` / ``child1.a.com`` 与 ``child2.a.com`` / ``xxx.child1.a.com`` 与 ``child1.a.com`` 两两不同源。
 
-对于这种情况，可以在两个方面各自设置 ``document.domain='a.com'`` 来改变其源来实现以上任意两个页面之间的通信。
+对于这种情况，可以在两个方面各自设置 ``document.damain='a.com'`` 来改变其源来实现以上任意两个页面之间的通信。
 
 另外因为浏览器单独保存端口号，这种赋值会导致端口号被重写为 ``null`` 。
 
@@ -59,10 +59,6 @@ JSONP跨域
 JSONP就是利用 ``<script>`` 标签的跨域能力实现跨域数据的访问，请求动态生成的JavaScript脚本同时带一个callback函数名作为参数。
 
 服务端收到请求后，动态生成脚本产生数据，并在代码中以产生的数据为参数调用callback函数。
-
-JSONP也存在一些安全问题，例如当对传入/传回参数没有做校验就直接执行返回的时候，会造成XSS问题。没有做Referer或Token校验就给出数据的时候，可能会造成数据泄露。
-
-另外JSONP在没有设置callback函数的白名单情况下，可以合法的做一些设计之外的函数调用，引入问题。这种攻击也被称为SOME攻击。
 
 跨源脚本API访问
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,23 +93,10 @@ CORS
 ----------------------------------------
 CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource sharing）。通过这个标准，可以允许浏览器读取跨域的资源。
 
-常见请求头
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Origin
-    - 预检请求或实际请求的源站URI, 浏览器请求默认会发送该字段
-    - ``Origin: <origin>``
-- Access-Control-Request-Method
-    - 声明请求使用的方法
-    - ``Access-Control-Request-Method: <method>``
-- Access-Control-Request-Headers
-    - 声明请求使用的header字段
-    - ``Access-Control-Request-Headers: <field-name>[, <field-name>]*``
-
 常见返回头
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Access-Control-Allow-Origin
-    - 声明允许访问的源外域URI
-    - 对于携带身份凭证的请求不可使用通配符 ``*``
+    - 声明允许的源
     - ``Access-Control-Allow-Origin: <origin> | *``
 - Access-Control-Expose-Headers
     - 声明允许暴露的头
@@ -131,6 +114,18 @@ CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource s
     - 声明允许的头
     - ``Access-Control-Allow-Headers: <field-name>[, <field-name>]*``
 
+常见请求头
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Origin
+    - 指定请求的源
+    - ``Origin: <origin>``
+- Access-Control-Request-Method
+    - 声明请求使用的方法
+    - ``Access-Control-Request-Method: <method>``
+- Access-Control-Request-Headers
+    - 声明请求使用的header
+    - ``Access-Control-Request-Headers: <field-name>[, <field-name>]*``
+
 防御建议
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - 如非必要不开启CORS
@@ -141,6 +136,6 @@ CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource s
 
 阻止跨源访问
 ----------------------------------------
-阻止跨域写操作，可以检测请求中的 ``CSRF token`` ，这个标记被称为Cross-Site Request Forgery (CSRF) 标记。
+阻止跨域写操作，可以检测请求中的 ``CSRF toke`` ，这个标记被称为Cross-Site Request Forgery (CSRF) 标记。
 
-阻止资源的跨站读取，因为嵌入资源通常会暴露信息，需要保证资源是不可嵌入的。但是多数情况下浏览器都不会遵守 ``Content-Type`` 消息头。例如如果在HTML文档中指定 ``<script>`` 标记，则浏览器会尝试将HTML解析为JavaScript。 
+阻止资源的跨站读取，因为嵌入资源通常会暴露信息，需要保证资源是不可嵌入的。但是多数情况下浏览器都不会遵守 ``Conten-Type`` 消息头。例如如果在HTML文档中指定 ``<script>`` 标记，则浏览器会尝试将HTML解析为JavaScript。 
