@@ -1,4 +1,4 @@
-综合技巧
+其他
 ========================================
 
 端口转发
@@ -68,3 +68,4 @@
 - schtasks
 - SMB+MOF || DLL Hijacks
 - PTH + compmgmt.msc
+

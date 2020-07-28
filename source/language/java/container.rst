@@ -19,14 +19,7 @@ Tomcat服务器是由一系列可配置的组件构成的，其中核心组件�
 
 相关CVE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- CVE-2020-1938
-    - https://www.freebuf.com/vuls/228108.html
-- CVE-2019-0232
-    - 远程代码执行
-    - https://github.com/pyn3rd/CVE-2019-0232/
-- CVE-2017-12615
-    - 任意文件写入
-    - https://mp.weixin.qq.com/s?__biz=MzI1NDg4MTIxMw==&mid=2247483659&idx=1&sn=c23b3a3b3b43d70999bdbe644e79f7e5
+- `CVE-2017-12615 <https://mp.weixin.qq.com/s?__biz=MzI1NDg4MTIxMw==&mid=2247483659&idx=1&sn=c23b3a3b3b43d70999bdbe644e79f7e5>`_
 - CVE-2013-2067
 - CVE-2012-4534
 - CVE-2012-4431
@@ -48,43 +41,24 @@ WebLogic对业内多种标准的全面支持，包括EJB、JSP、Servlet、JMS�
 
 相关CVE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- CVE-2019-2725
-    - wls-wsat 反序列化远程代码执行
-- CVE-2019-2658
-- CVE-2019-2650
-- CVE-2019-2649
-- CVE-2019-2648
-- CVE-2019-2647
-- CVE-2019-2646
-- CVE-2019-2645
-- CVE-2019-2618
-    - https://github.com/jas502n/cve-2019-2618/
-- CVE-2019-2615
-- CVE-2019-2568
-- CVE-2018-3252
-- CVE-2018-3248
-- CVE-2018-3245
-- CVE-2018-3201
-- CVE-2018-3197
+- CVE-2015-4852
+    - https://github.com/roo7break/serialator
+- CVE-2016-3510
+- CVE-2017-3248
+- CVE-2017-10271
+    - http://webcache.googleusercontent.com/search?q=cache%3AsH7j8TF8uOIJ%3Awww.freebuf.com%2Fvuls%2F160367.html
+- CVE-2018-2628
+    - https://mp.weixin.qq.com/s/nYY4zg2m2xsqT0GXa9pMGA
+- CVE-2018-2894
+    - https://xz.aliyun.com/t/2458
 - CVE-2018-3191
     - https://github.com/voidfyoo/CVE-2018-3191
     - https://github.com/Libraggbond/CVE-2018-3191
-- CVE-2018-2894
-    - 任意文件上传
-    - https://xz.aliyun.com/t/2458
-- CVE-2018-2893
-    - 反序列化
-    - https://www.freebuf.com/vuls/178105.html
-- CVE-2018-2628
-    - https://mp.weixin.qq.com/s/nYY4zg2m2xsqT0GXa9pMGA
-- CVE-2018-1258
-- CVE-2017-10271
-    - XMLDecoder 反序列化漏洞
-    - http://webcache.googleusercontent.com/search?q=cache%3AsH7j8TF8uOIJ%3Awww.freebuf.com%2Fvuls%2F160367.html
-- CVE-2017-3248
-- CVE-2016-3510
-- CVE-2015-4852
-    - https://github.com/roo7break/serialator
+- CVE-2018-3197
+- CVE-2018-3201
+- CVE-2018-3245
+- CVE-2018-3248
+- CVE-2018-3252
 
 JBoss
 ----------------------------------------
@@ -96,12 +70,4 @@ JBoss是一个基于J2EE的管理EJB的容器和服务器，但JBoss核心服务
 相关CVE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - CVE-2017-12149
-    - 反序列化漏洞
-    - 访问 ``/invoker/readonly`` ，页面存在即有反序列化漏洞
 
-Jetty
-----------------------------------------
-
-简介
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Jetty是一个开源的servlet容器。

@@ -1,14 +1,14 @@
-Python
+Python相关漏洞
 ================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    fmtstr
    unserialize
    sandbox
    framework
-   sink
+   dangerous
    ref
    

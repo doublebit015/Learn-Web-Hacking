@@ -3,10 +3,9 @@ XSS
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    classify
-   harm
    sop
    csp
    source

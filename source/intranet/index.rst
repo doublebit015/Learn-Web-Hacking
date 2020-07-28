@@ -3,14 +3,11 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容索引:
+   :caption: Contents:
 
    windows
    winpersistence
-   domain
    linux
-   linuxpersistence
-   trojan
    traceremove
    misc
    ref
