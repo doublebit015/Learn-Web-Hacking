@@ -1,14 +1,20 @@
-PHP相关漏洞
-================================
+PHP
+========================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 内容索引:
 
    backdoor
    unserialize
-   phpinfo
+   disablefunc
+   basedir
+   config
+   stream
    htaccess
    webshell
+   phar
+   sink
    misc
+   version
    ref

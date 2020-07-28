@@ -17,6 +17,10 @@
 Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - 无用用户/用户组检查
+- 空口令帐号检查
+- 用户密码策略
+    - /etc/login.defs
+    - /etc/pam.d/system-auth
 - 敏感文件权限配置
     - /etc/passwd
     - /etc/shadow
@@ -49,6 +53,10 @@ Windows
     - ade, adp, ani, bas, bat, chm, cmd, com, cpl, crt, hlp, ht, hta, inf, ins, isp, job, js, jse, lnk, mda, mdb, mde, mdz, msc, msi, msp, mst, pcd, pif, reg, scr, sct, shs, url, vb, vbe, vbs, wsc, wsf, wsh, exe, pif
 - 限制会调起wscript的后缀
     - bat, js, jse, vbe, vbs, wsf, wsh
+- 域
+    - 限制将计算机加入域的权限
+    - 域账户使用最小权限原则
+    - 减少非必要高权限账户的数量
 
 应用
 ----------------------------------------
@@ -116,6 +124,13 @@ Tomcat
 - 用户权限配置
 - 配置超时时间防DoS
 
+密码管理策略
+----------------------------------------
+- 长度不少于8个字符
+- 不存在于已有字典之中
+- 不使用基于知识的认证方式
+
 参考链接
 ----------------------------------------
 - `awesome windows domain hardening <https://github.com/PaulSec/awesome-windows-domain-hardening>`_
+- `customize attack surface reduction <https://docs.microsoft.com/zh-cn/windows/security/threat-protection/microsoft-defender-atp/customize-attack-surface-reduction>`_

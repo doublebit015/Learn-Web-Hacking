@@ -38,9 +38,15 @@ bypass
 - `666 lines of xss payload <https://gist.github.com/JohannesHoppe/5612274>`_
 - `xss auditor bypass <https://github.com/masatokinugawa/filterbypass>`_
 - `xss auditor bypass writeup <https://www.leavesongs.com/HTML/chrome-xss-auditor-bypass-collection.html>`_
-- `bypassing-csp-using-polyglot-jpegs <https://portswigger.net/blog/bypassing-csp-using-polyglot-jpegs>`_
+- `bypassing csp using polyglot jpegs <https://portswigger.net/blog/bypassing-csp-using-polyglot-jpegs>`_
+- `bypass xss filters using javascript global variables <https://www.secjuice.com/bypass-xss-filters-using-javascript-global-variables/>`_
 
 持久化
 ----------------------------------------
 - `变种XSS 持久控制 by tig3r <http://drops.wooyun.org/web/10798>`_
 - `Using Appcache and ServiceWorker for Evil <https://sakurity.com/blog/2015/08/13/middlekit.html>`_
+
+Tricks
+----------------------------------------
+- `Service Worker 安全探索 <https://github.com/etherdream/sw-sec>`_
+- `前端黑魔法 <https://github.com/EtherDream/web-frontend-magic>`_
